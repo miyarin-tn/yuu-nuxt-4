@@ -31,4 +31,9 @@ export default defineNuxtConfig({
     // https://nuxt.com/docs/4.x/api/nuxt-config#port
     port: Number(process.env.APP_PORT || 3000),
   },
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.NUXT_API_BASE_URL || 'http://localhost:8080/api',
+    },
+  },
 })
