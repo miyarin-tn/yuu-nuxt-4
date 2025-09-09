@@ -1,0 +1,6 @@
+@use 'variables' as *;
+
+:root {
+  --primary-color: #{$black};
+  --background-color: #{$white};
+}

@@ -1,0 +1,28 @@
+@use 'variables' as *;
+
+@mixin breakpoint($size) {
+  @if $size == xs {
+    @media (max-width: #{$screen-xs}) { @content; }
+  }
+  @else if $size == sm {
+    @media (max-width: #{$screen-sm}) { @content; }
+  }
+  @else if $size == md {
+    @media (max-width: #{$screen-md}) { @content; }
+  }
+  @else if $size == lg {
+    @media (max-width: #{$screen-lg}) { @content; }
+  }
+}
+
+@mixin breakpoint-max($size) {
+  @if $size == md {
+    @media (min-width: #{$screen-md-max}) { @content; }
+  }
+  @else if $size == sm {
+    @media (min-width: #{$screen-sm-max}) { @content; }
+  }
+  @else if $size == xs {
+    @media (min-width: #{$screen-xs-max}) { @content; }
+  }
+}
