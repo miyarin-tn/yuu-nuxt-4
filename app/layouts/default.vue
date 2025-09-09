@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="header-bar">
+    <div v-show="!loadingStore.isLoading" class="header-bar">
       <USelect
         v-model="value"
         :items="items"
@@ -19,6 +19,9 @@
 import type { SelectItem } from '@nuxt/ui'
 
 const { setLocale, locale } = useI18n()
+const loadingStore = useLoadingStore()
+
+loadingStore.setLoading(true)
 
 const items = computed(() => [
   {
@@ -41,6 +44,11 @@ const items = computed(() => [
 
 const value = ref(locale.value || 'en')
 const avatar = computed(() => items.value.find((item: any) => item.id === value.value)?.avatar)
+
+onMounted(async () => {
+  const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+  await wait(200).then(() => loadingStore.setLoading(false))
+})
 </script>
 
 <style lang="scss" scoped>

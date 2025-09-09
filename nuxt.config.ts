@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxtjs/i18n',
+    '@pinia/nuxt',
   ],
   // i18n config: https://i18n.nuxtjs.org/docs/getting-started/usage
   i18n: {
