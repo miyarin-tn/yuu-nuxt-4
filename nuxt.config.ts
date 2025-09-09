@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
+    '@nuxtjs/color-mode',
   ],
   // i18n config: https://i18n.nuxtjs.org/docs/getting-started/usage
   i18n: {

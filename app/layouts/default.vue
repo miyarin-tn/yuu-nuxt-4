@@ -1,6 +1,13 @@
 <template>
   <div class="wrapper">
     <div v-show="!loadingStore.isLoading" class="header-bar">
+      <client-only>
+        <USwitch
+          v-model="isLight"
+          unchecked-icon="i-lucide:sun-moon"
+          checked-icon="i-lucide:sun-medium"
+        />
+      </client-only>
       <USelect
         v-model="value"
         :items="items"
@@ -30,6 +37,14 @@ const loadingStore = useLoadingStore()
 const authStore = useAuthStore()
 
 loadingStore.setLoading(true)
+
+const colorMode = useColorMode()
+const isLight = computed({
+  get: () => colorMode.value === 'light',
+  set: (val: boolean) => {
+    colorMode.preference = val ? 'light' : 'dark'
+  },
+})
 
 const items = computed(() => [
   {
@@ -74,5 +89,9 @@ function logout() {
   display: flex;
   gap: 10px;
   align-items: center;
+  :deep(.border-2) {
+    border-width: 2px;
+    border-color: transparent;
+  }
 }
 </style>
