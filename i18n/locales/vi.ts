@@ -9,5 +9,6 @@ export default defineI18nLocale(locale => {
 const vi = {
   english: 'Tiếng Anh',
   vietnamese: 'Tiếng Việt',
+  welcome: 'Chào mừng đến với Nuxt!',
   go_back_home: 'Quay lại trang chủ',
 }

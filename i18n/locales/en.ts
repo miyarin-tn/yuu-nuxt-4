@@ -9,5 +9,6 @@ export default defineI18nLocale(locale => {
 const en = {
   english: 'English',
   vietnamese: 'Vietnamese',
+  welcome: 'Welcome to Nuxt!',
   go_back_home: 'Go back home',
 }
