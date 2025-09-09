@@ -1,0 +1,31 @@
+services:
+  app_prod:
+    # image: registry.gitlab.com/<username>/<project>:latest
+    image: nuxt_prod_image
+    container_name: nuxt_prod_container
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+      # user: 1000:1000 # user:group node (use non root)
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    environment:
+      - MONGO_URI=mongodb://db_nuxt_prod_container:27017/nuxt_prod_db
+    restart: unless-stopped
+    networks:
+      - nuxt_prod_network
+    depends_on:
+        - db
+
+  db:
+    image: mongo
+    container_name: db_nuxt_prod_container
+    user: 999:999 # user:group mongo (use non root)
+    volumes:
+      - .docker/data/db_prod:/data/db
+    restart: unless-stopped
+    networks:
+      - nuxt_prod_network
+
+networks:
+  nuxt_prod_network:

@@ -1,0 +1,34 @@
+services:
+  nuxt_dev:
+    image: nuxt_dev_image
+    container_name: nuxt_dev_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    environment:
+      - MONGO_URI=mongodb://db_nuxt_dev_container:27017/nuxt_dev_db
+    volumes:
+      - .:/usr/local/app/nuxt
+      - /usr/local/app/nuxt/node_modules
+      - /usr/local/app/nuxt/.nuxt
+      - /usr/local/app/nuxt/.docker
+    restart: unless-stopped
+    networks:
+      - nuxt_dev_network
+    depends_on:
+        - db
+
+  db:
+    image: mongo
+    container_name: db_nuxt_dev_container
+    volumes:
+      - .docker/data/db_dev:/data/db
+    restart: unless-stopped
+    networks:
+      - nuxt_dev_network
+
+networks:
+  nuxt_dev_network:
