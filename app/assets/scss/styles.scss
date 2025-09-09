@@ -3,4 +3,10 @@
 :root {
   --primary-color: #{$black};
   --background-color: #{$white};
+  --box-background: #{$box-background};
+  --message-text: #{$message-text};
+}
+
+body {
+  color: var(--primary-color);
 }

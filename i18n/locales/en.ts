@@ -9,4 +9,5 @@ export default defineI18nLocale(locale => {
 const en = {
   english: 'English',
   vietnamese: 'Vietnamese',
+  go_back_home: 'Go back home',
 }

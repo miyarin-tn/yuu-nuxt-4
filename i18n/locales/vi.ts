@@ -9,4 +9,5 @@ export default defineI18nLocale(locale => {
 const vi = {
   english: 'Tiếng Anh',
   vietnamese: 'Tiếng Việt',
+  go_back_home: 'Quay lại trang chủ',
 }
