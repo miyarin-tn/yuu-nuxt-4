@@ -1,0 +1,23 @@
+{
+  "CODE": {
+    "BAD_REQUEST": "Bad Request",
+    "CONFLICT": "Conflict",
+    "FORBIDDEN": "Forbidden",
+    "INTERNAL_SERVER_ERROR": "Internal Server Error",
+    "NOT_FOUND": "Not Found",
+    "UNAUTHORIZED": "Unauthorized"
+  },
+  "MESSAGE": {
+    "USER_PARAMS_REQUIRED": "Email and password are required",
+    "USER_EMAIL_EXISTS": "Email already exists",
+    "USER_PASSWORD_TOO_SHORT": "Password must be at least {length} characters",
+    "USER_LOGIN_SUCCESS": "Login successful",
+    "USER_NOT_FOUND": "User not found",
+    "USER_WRONG_EMAIL_PASSWORD": "Invalid email or password",
+    "USER_CREATED_SUCCESS": "User created successfully",
+    "USER_CREATED_FAILED": "User creation failed",
+    "REFRESH_TOKEN_REQUIRED": "Refresh token is required",
+    "INVALID_ACCESS_TOKEN": "Invalid access token",
+    "INVALID_REFRESH_TOKEN": "Invalid refresh token"
+  }
+}

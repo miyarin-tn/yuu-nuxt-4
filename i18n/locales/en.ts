@@ -11,4 +11,17 @@ const en = {
   vietnamese: 'Vietnamese',
   welcome: 'Welcome to Nuxt!',
   go_back_home: 'Go back home',
+  email: 'Email',
+  enter_email: 'Enter your email',
+  password: 'Password',
+  enter_password: 'Enter your password',
+  login: 'Login',
+  invalid_email: 'Invalid email',
+  password_length: 'Must be at least {length} characters',
+  success: 'Success',
+  login_success: 'Login successful',
+
+  server: {
+    token_invalid: 'Invalid token',
+  },
 }

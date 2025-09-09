@@ -10,6 +10,12 @@
         class="w-48"
         @change="setLocale(value)"
       />
+      <UIcon
+        v-show="authStore.isAuthenticated"
+        name="i-lucide:power"
+        class="size-5 cursor-pointer"
+        @click="logout"
+      />
     </div>
     <slot></slot>
   </div>
@@ -17,9 +23,11 @@
 
 <script setup lang="ts">
 import type { SelectItem } from '@nuxt/ui'
+import { APP_ROUTES } from '~/constants/app-routes'
 
 const { setLocale, locale } = useI18n()
 const loadingStore = useLoadingStore()
+const authStore = useAuthStore()
 
 loadingStore.setLoading(true)
 
@@ -49,6 +57,13 @@ onMounted(async () => {
   const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
   await wait(200).then(() => loadingStore.setLoading(false))
 })
+
+const toast = useToast()
+function logout() {
+  useLogout()
+  toast.clear()
+  navigateTo(APP_ROUTES.LOGIN)
+}
 </script>
 
 <style lang="scss" scoped>
@@ -56,5 +71,8 @@ onMounted(async () => {
   position: absolute;
   top: 10px;
   right: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 </style>

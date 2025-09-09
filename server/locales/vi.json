@@ -1,0 +1,23 @@
+{
+  "CODE": {
+    "BAD_REQUEST": "Yêu cầu lỗi",
+    "CONFLICT": "Xung đột",
+    "FORBIDDEN": "Không được phép",
+    "INTERNAL_SERVER_ERROR": "Lỗi bên trong máy chủ",
+    "NOT_FOUND": "Không tìm thấy",
+    "UNAUTHORIZED": "Không xác thực"
+  },
+  "MESSAGE": {
+    "USER_PARAMS_REQUIRED": "Email và mật khẩu là bắt buộc",
+    "USER_EMAIL_EXISTS": "Email đã tồn tại",
+    "USER_PASSWORD_TOO_SHORT": "Mật khẩu phải ít nhất {length} ký tự",
+    "USER_LOGIN_SUCCESS": "Đăng nhập thành công",
+    "USER_NOT_FOUND": "Không tìm thấy người dùng",
+    "USER_WRONG_EMAIL_PASSWORD": "Sai email hoặc mật khẩu",
+    "USER_CREATED_SUCCESS": "Tạo người dùng thành công",
+    "USER_CREATED_FAILED": "Lỗi khi tạo người dùng",
+    "REFRESH_TOKEN_REQUIRED": "Mã làm mới là bắt buộc",
+    "INVALID_ACCESS_TOKEN": "Mã truy cập không hợp lệ",
+    "INVALID_REFRESH_TOKEN": "Mã làm mới không hợp lệ"
+  }
+}
